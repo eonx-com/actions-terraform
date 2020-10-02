@@ -20,7 +20,7 @@ cd "${GITHUB_WORKSPACE}" || exit 1
 cd "${INPUT_PATH}" || exit 2
 
 # Search for Terraform backend definition
-if [ -f "devops_backend.tf" ]; then
+if [ -f "devops.tf" ]; then
   echo
   echo
   echo
