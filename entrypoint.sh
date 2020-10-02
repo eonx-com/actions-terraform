@@ -24,7 +24,7 @@ if [ -f "devops.tf" ]; then
   echo
   echo
   echo
-  cat devops_backend.tf
+  cat devops.tf
   # Begin deployment
   echo
   echo
