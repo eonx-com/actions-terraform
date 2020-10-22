@@ -37,7 +37,6 @@ if [ -f "devops.tf" ]; then
   echo
   echo
   echo "Running Terraform apply"
-  export
   terraform apply -auto-approve ${INPUT_APPLY_PARAMETERS} || exit 4
 else
   # Failed to locate Terraform backend definition
