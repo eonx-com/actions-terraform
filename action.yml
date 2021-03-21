@@ -29,6 +29,14 @@ inputs:
     description: 'SumoLogic credentials (where applicable)'
     default: ''
     required: false
+  opsgenie_api_key:
+    description: "OpsGenie API key"
+    default: ''
+    required: false
+  opsgenie_api_url:
+    description: "OpsGenie API URL"
+    default: 'api.opsgenie.com'
+    required: false
   sumo_logic_access_key:
     description: 'SumoLogic credentials (where applicable)'
     default: ''
@@ -37,6 +45,12 @@ inputs:
     description: 'SumoLogic environment (where applicable)'
     default: 'au'
     required: false
+  input_file_prefix:
+    description: 'Input plan file prefix'
+    required: true
+  intput_bucket:
+    description: 'Input plan S3 bucket'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
