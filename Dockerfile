@@ -10,6 +10,7 @@ RUN apt-get update -y; \
         build-essential \
         libssl-dev \
         libffi-dev \
+        python3-dev \
         cargo \
         git \
         gcc \
@@ -17,8 +18,9 @@ RUN apt-get update -y; \
         zip \
         awscli;
 
-RUN pip3 install -upgrade pip; \
-    pip3 install setuptools setuptools-rust pgpy;
+RUN pip3 install --upgrade pip; \
+    pip3 install setuptools setuptools-rust; \
+    pip3 install pgpy;
 
 RUN wget https://releases.hashicorp.com/terraform/0.13.0/terraform_0.13.0_linux_amd64.zip; \
     unzip terraform_0.13.0_linux_amd64.zip; \
