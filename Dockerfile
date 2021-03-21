@@ -9,7 +9,10 @@ RUN apt-get update -y; \
         git \
         gcc \
         curl \
+        zip \
         awscli;
+
+RUN pip3 install setuptools pgpy;
 
 RUN wget https://releases.hashicorp.com/terraform/0.13.0/terraform_0.13.0_linux_amd64.zip; \
     unzip terraform_0.13.0_linux_amd64.zip; \
