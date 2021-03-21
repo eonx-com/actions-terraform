@@ -6,7 +6,6 @@ RUN apt-get update -y; \
         unzip \
         wget \
         gcc \
-        build-essentials \
         curl \
         awscli;
 
