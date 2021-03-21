@@ -46,4 +46,4 @@ echo "Downloading Plan"
 aws s3 cp "s3://${INPUT_BUCKET}/${INPUT_FILE_PREFIX}/${GITHUB_SHA}.plan" input.plan
 
 echo "Running Terraform plan"
-terraform apply "input.plan" -auto-approve || exit 4
+terraform apply "input.plan" || exit 4
