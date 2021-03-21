@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 RUN apt-get update -y; \
-    apt-get install -y --no-install-recommends \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         python3-pip \
         unzip \
         wget \
