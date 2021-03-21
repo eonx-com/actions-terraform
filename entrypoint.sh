@@ -10,6 +10,8 @@ export AWS_DEFAULT_REGION="${INPUT_AWS_DEFAULT_REGION}"
 export SUMOLOGIC_ACCESSID="${INPUT_SUMO_LOGIC_ACCESS_ID}"
 export SUMOLOGIC_ACCESSKEY="${INPUT_SUMO_LOGIC_ACCESS_KEY}"
 export SUMOLOGIC_ENVIRONMENT="${INPUT_SUMO_LOGIC_ENVIRONMENT}"
+export INPUT_BUCKET="${INPUT_INPUT_BUCKET}"
+export INPUT_FILE_PREFIX="${INPUT_INPUT_FILE_PREFIX}"
 export TF_IN_AUTOMATION=1
 export TF_VAR_sumologic_access_id="${INPUT_SUMO_LOGIC_ACCESS_ID}"
 export TF_VAR_sumologic_access_key="${INPUT_SUMO_LOGIC_ACCESS_KEY}"
@@ -39,5 +41,8 @@ terraform init || exit 3
 echo
 echo
 
+echo "Downloading Plan"
+aws s3 cp "s3://${INPUT_BUCKET}/${INPUT_FILE_PREFIX}/${GITHUB_SHA}.plan" input.plan
+
 echo "Running Terraform plan"
-terraform apply -auto-approve ${INPUT_APPLY_PARAMETERS} || exit 4
+terraform apply "input.plan" -auto-approve ${INPUT_APPLY_PARAMETERS} || exit 4
