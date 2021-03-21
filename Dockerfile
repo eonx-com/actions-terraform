@@ -5,6 +5,8 @@ RUN apt-get update -y; \
         python3-pip \
         unzip \
         wget \
+        gcc \
+        build-essentials \
         curl \
         awscli;
 
