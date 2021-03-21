@@ -16,6 +16,7 @@ export TF_IN_AUTOMATION=1
 export TF_VAR_sumologic_access_id="${INPUT_SUMO_LOGIC_ACCESS_ID}"
 export TF_VAR_sumologic_access_key="${INPUT_SUMO_LOGIC_ACCESS_KEY}"
 export TF_VAR_sumologic_environment="${INPUT_SUMO_LOGIC_ENVIRONMENT}"
+export TF_VAR_opsgenie_api_key="${INPUT_OPSGENIE_API_KEY}"
 
 # ----------------------------------------------------------------------------------------------------------------------------------
 # Deploy Project Infrastructure
